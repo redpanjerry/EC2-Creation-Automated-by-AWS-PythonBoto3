@@ -1,8 +1,9 @@
 # DevOps Practice (EC2 automation by Boto3)
 
+#### This is a practice exercise
 Our main goal in this tutorial is to develop an **automation program** that takes a YAML configuration file as input value and deploys a **Linux AWS EC2 instance** with **two volumes attached** and **two different users**.
 
-(In this tutorial, our Operating System is MacOs)
+(In this tutorial, we are using MacOs for our Operating System, but feel free to use any other OS)
 
 ## Prerequisite
 - AWS Account
@@ -97,9 +98,9 @@ server:
 2. On the top panel, go to Terminal, then select **New Terminal**
 
 3. Install **Python Virtual Environment** by running the following command:
-   - ```python3 -m venv tutorial-env```
-     - On Windows, run: ```tutorial-env\Scripts\activate.bat```
-     - On Unix or MacOs, run: ```source tutorial-env/bin/activate```
+   - ``python3 -m venv tutorial-env``
+     - On Windows, run: ``tutorial-env\Scripts\activate.bat``
+     - On Unix or MacOs, run: ``source tutorial-env/bin/activate``
 <p align = "center">
       <img src = "images/003-python-virtual-env.jpg" width = "80%" height = "80%">
       </p>
@@ -111,7 +112,7 @@ server:
       <img src = "images/004-cd-file-location.jpg" width = "80%" height = "80%">
       </p>
 
-5. Run ```python app.py``` to execute app.py, it will ask you to enter your Access key, Secret access key, and specify a region (can leave as default)
+5. Run ``python app.py`` to execute app.py, it will ask you to enter your Access key, Secret access key, and specify a region (can leave as default)
 
 <p align = "center">
       <img src = "images/005-enter-credentials.jpg" width = "80%" height = "80%">
@@ -123,7 +124,7 @@ server:
 
 2. On the left panel, select **Security Groups** then select the **default** security group
 3. Click **Edit inbound rules** to add permissions
-4. Click **Add rule**, select **SSH** for Type, select ```0.0.0.0/0``` for source, then click **Save rules**
+4. Click **Add rule**, select **SSH** for Type, select ``0.0.0.0/0`` for source, then click **Save rules**
    <p align = "center">
       <img src = "images/006-edit-sg-rules.jpg" width = "80%" height = "80%">
       </p>
@@ -151,4 +152,36 @@ server:
       <img src = "images/008-user2-connect.jpg" width = "80%" height = "80%">
       </p>
 
+10. Now we are goint to test the permision of read/ write to EBS volumes, you can either connect by user1 or user2
+11. Run ``lsblk`` to list all the volumes, we can see the two volumes that created by app.py with the value specified in config.yaml
+
+12. First, we are going to create an empty .txt file and move it to /data volume to check to write permission
+13. Run ``touch hello.txt`` to create a .txt file
+14. Run ``vim hello.txt`` to see the content of the .txt file, then run the following command to edit it:
+    - Type ``i``, then enter whatever you want in the file
+    - Type ``esc`` when you finish editing, then type ``:x`` and ``Enter`` so save and exit
     
+15. Now, we are going to move the hellp.txt to one of our volume by runnging ``mv hello.txt /data``
+16. We can move our location to /data volume by running ``cd /data``, then we run ``ls`` to see that the hello.txt file is now under the /data volume
+
+17. Redo step 14 to edit hello.txt file
+18. If you can successfully read and edit the file, it means that this user has the permission to read/ write in the volume
+
+## Conclusion
+
+The overall workflow is to run app.py to read the configuration in config.yaml, then run the main() function, which calls all the API we wrote in aws_util.py, including:
+ - set_client()
+ - set_block_device_mapping()
+ - set_userdata()
+ - get_latest_ami()
+ - create_instance()
+
+The output of this automation program are:
+- An Linux AWS EC2 instance
+- Two volumes attached to the instance
+- Two different users which are able to connect and access the instance and volumes
+
+## Clean-up
+- EC2 instance
+- IAM user
+- 
