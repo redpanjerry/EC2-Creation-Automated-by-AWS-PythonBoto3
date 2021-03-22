@@ -184,3 +184,11 @@ The output of this automation program are:
 ## Clean-up
 - EC2 instance
 - IAM user
+
+## Reference
+
+- Boto3 EC2: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html
+- Boto3 Credentials: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html
+- Create User: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html
+- Mount Volumes: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html
+- Latest AMI: https://aws.amazon.com/blogs/compute/query-for-the-latest-amazon-linux-ami-ids-using-aws-systems-manager-parameter-store/
