@@ -184,4 +184,3 @@ The output of this automation program are:
 ## Clean-up
 - EC2 instance
 - IAM user
-- 
