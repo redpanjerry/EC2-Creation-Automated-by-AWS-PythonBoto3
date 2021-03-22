@@ -10,6 +10,7 @@ Our main goal in this tutorial is to develop an **automation program** that take
 - Access Key & Secret Access Key
 - IAM User with role attactched
 - EC2 Keypair
+- Download the files in this repo
 
 ## General guidelines to follow:
 
