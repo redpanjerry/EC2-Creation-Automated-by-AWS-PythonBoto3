@@ -118,7 +118,7 @@ server:
       <img src = "images/005-enter-credentials.jpg" width = "80%" height = "80%">
       </p>
 
-## Step 3: Connect to your EC2 instnace by 2 different users to check if it can read/ write to volumes
+## Step 3: Connect to your EC2 instance by 2 different users to check if it can read/ write to volumes
 
 1. Login to your AWS account, go to **EC2**
 
