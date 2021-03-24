@@ -23,8 +23,9 @@ Create an EC2 instance by AWS Console is not a complicated process, you just nee
 - You can include subnet and security groups information in config.yaml too.
 - Start the application, it'll ask you for AWS credentials. You should specify your own AWS credentials, you can change the region or leave it as default
 
+## Step-by-step
 
-## Step 1: Change key_name in YAML configuration file
+### Step 1: Change key_name in YAML configuration file
 
 1. The following section is the template of YAML file
 
@@ -63,7 +64,7 @@ server:
 2. Make sure to change the **your_keys_name** to your own key's name
     - Example > **key_name: ec2-key-test**
   
-## Step 2: Create IAM user and assign required roles to it, also save credentials for further use
+### Step 2: Create IAM user and assign required roles to it, also save credentials for further use
 
 1. Login to your AWS account, go to **IAM**
 
@@ -95,7 +96,7 @@ server:
       <img src = "images/002-credentials.jpg" width = "80%" height = "80%">
       </p>
 
-## Step 3: Run app.py to execute the automation program
+### Step 3: Run app.py to execute the automation program
 
 1. In this tutorial we are going to use **Visual Studio Code** as our IDE, where we install our **Python Virtual Environment**, and where we execute our code
 
@@ -122,7 +123,7 @@ server:
       <img src = "images/005-enter-credentials.jpg" width = "80%" height = "80%">
       </p>
 
-## Step 3: Connect to your EC2 instance by 2 different users to check if it can read/ write to volumes
+### Step 4: Connect to your EC2 instance by 2 different users to check if it can read/ write to volumes
 
 1. Login to your AWS account, go to **EC2**
 
