@@ -6,7 +6,7 @@ Our main goal in this tutorial is to develop an **automation program** that take
 (In this tutorial, we are using MacOs for our Operating System, but feel free to use any other OS)
 
 ## Scenario
-Create an EC2 instance by AWS Console is not a complicated process, you just need to choose the instance type, AMI, VPC, Security Group, etc. But what if you need to create ten or hundred instances at the same time? Are you still going to use AWS Console to do the same process over and over again? Using Python Boto3 and a configuration yaml file, you can automate the EC2 instance creation process! Also you can specify all the configuration by changing the code only, which can help you save time!
+Create an EC2 instance by AWS Console is not a complicated process, you just need to choose the instance type, AMI, VPC, Security Group, etc. But what if? Let's say you need to create ten or hundred instances at the same time, are you still going to use AWS Console to do the same process over and over again? Using Python Boto3 and a configuration yaml file, you can automate the EC2 instance creation process! Also you can specify all the configuration by changing the code only, which can help you save time!
 
 ## Prerequisite
 - AWS Account
