@@ -1,6 +1,5 @@
 # DevOps Practice (EC2 automation by Boto3)
 
-#### This is a practice exercise
 Our main goal in this tutorial is to develop an **automation program** that takes a YAML configuration file as input and deploys a **Linux AWS EC2 instance** with **two volumes attached**, and **two different users** that can connect to the instance.
 
 (In this tutorial, we are using MacOs for our Operating System, but feel free to use any other OS)
